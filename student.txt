@@ -1,0 +1,5 @@
+Student name: Jan-Martijn Pasterkamp
+Student number: 760548
+Student class: IT B
+GitHub Repository: your github repository URL
+GitHub Pages URL: your github pages URL
