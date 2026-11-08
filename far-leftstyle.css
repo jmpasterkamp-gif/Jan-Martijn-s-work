@@ -1,0 +1,157 @@
+
+/* background and title for the far-left page */
+
+.far-left-page {
+    background-color: #8b0000;
+    min-height: 100vh;
+}
+
+.far-left-title {
+    color: #ffff00;
+    text-align: center;
+    font-size: 2.8rem;
+    padding: 25px 15px;
+    margin: 0;
+}
+
+/* grid that holds the pictures and text */
+
+.far-left-content {
+    display: grid;
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+    gap: 20px;
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+
+/* first row has a picture on the left */
+
+.far-left-content > :nth-child(1) {
+    grid-column: 1 / 4;
+    grid-row: 1;
+}
+
+.far-left-content > :nth-child(2) {
+    grid-column: 4 / 11;
+    grid-row: 1;
+}
+
+/* second row has the text on the left instead */
+
+.far-left-content > :nth-child(3) {
+    grid-column: 1 / 8;
+    grid-row: 2;
+}
+
+.far-left-content > :nth-child(4) {
+    grid-column: 8 / 11;
+    grid-row: 2;
+}
+
+/* third row goes back to the picture being on the left */
+
+.far-left-content > :nth-child(5) {
+    grid-column: 1 / 4;
+    grid-row: 3;
+}
+
+.far-left-content > :nth-child(6) {
+    grid-column: 4 / 11;
+    grid-row: 3;
+}
+
+/* basic styling for all the white boxes */
+
+.detail-card {
+    background-color: #fff;
+    border: 2px solid #000;
+    padding: 20px;
+    margin: 0;
+    min-width: 0;
+    overflow: hidden;
+}
+
+/* making sure the pictures fit inside their boxes */
+
+.far-left-content > :nth-child(1),
+.far-left-content > :nth-child(4),
+.far-left-content > :nth-child(5) {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.detail-card img {
+    display: block;
+    width: 100%;
+    height: 350px;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+.detail-card figcaption {
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+}
+
+/* styling for the text inside the boxes */
+
+.detail-card h2 {
+    font-size: 1.6rem;
+    margin-top: 0;
+    border-bottom: 2px solid #8b0000;
+    padding-bottom: 8px;
+}
+
+.detail-card p {
+    font-size: 1rem;
+    line-height: 1.7;
+    text-indent: 10px;
+}
+
+.detail-card p:first-of-type::first-letter {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* putting everything underneath each other on phones */
+
+@media screen and (max-width: 768px) {
+
+    .far-left-content {
+        grid-template-columns: 1fr;
+        width: 95%;
+    }
+
+    .far-left-content > :nth-child(1),
+    .far-left-content > :nth-child(2),
+    .far-left-content > :nth-child(3),
+    .far-left-content > :nth-child(4),
+    .far-left-content > :nth-child(5),
+    .far-left-content > :nth-child(6) {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .detail-card img {
+        height: auto;
+        max-height: 400px;
+    }
+}
+
+/* a few more size adjustments for small phones */
+
+@media screen and (max-width: 480px) {
+
+    .far-left-title {
+        font-size: 2rem;
+    }
+
+    .detail-card img {
+        max-height: 300px;
+    }
+}
